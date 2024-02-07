@@ -13,6 +13,11 @@ Foundry consists of:
 
 https://book.getfoundry.sh/
 
+For asserts:
+
+https://book.getfoundry.sh/reference/ds-test?highlight=emit%20log#logging-events
+
+
 ## Usage
 
 ### Build

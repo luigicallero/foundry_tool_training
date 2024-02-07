@@ -9,12 +9,18 @@ contract CounterTest is Test {
 
     function setUp() public {
         counter = new Counter();
-        counter.setNumber(0);
+        counter.setNumber(100);
+    }
+
+    function test_setUp() public {
+        uint value = counter.number();
+        assertEq(value, 100);
+        emit log_named_uint("Setted up to", value);
     }
 
     function test_Increment() public {
         counter.increment();
-        assertEq(counter.number(), 1);
+        assertEq(counter.number(), 101);
     }
 
     function testFuzz_SetNumber(uint256 x) public {
