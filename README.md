@@ -74,8 +74,7 @@ forge script script/Contract.s.sol:ContractScript --rpc-url <your_rpc_url> --pri
 forge script script/Contract.s.sol:ContractScript --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
 ```
 
-> [!TIP]
-> Sample
+:bulb: Sample
 ```shell 
 forge script script/Contract.s.sol:ContractScript --fork-url http://localhost:8545 --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 --broadcast
 ```
@@ -84,6 +83,20 @@ forge script script/Contract.s.sol:ContractScript --fork-url http://localhost:85
 
 ```shell
 $ cast <subcommand>
+```
+
+:bulb: Sample to read from Anvil Blockchain
+```shell
+cast call 0x5fbdb2315678afecb367f032d93f642f64180aa3 "getNumber()(uint)"
+```
+
+:bulb: Sample to write to Anvil Blockchain
+```shell
+export PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
+cast send 0x5fbdb2315678afecb367f032d93f642f64180aa3 "increment()" --private-key $PRIVATE_KEY
+
+cast call 0x5fbdb2315678afecb367f032d93f642f64180aa3 "getNumber()(uint)"
 ```
 
 ### Help
