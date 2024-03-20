@@ -15,7 +15,7 @@ contract CounterTest is Test {
     function test_setUp() public {
         uint value = counter.number();
         assertEq(value, 100);
-        emit log_named_uint("Setted up to", value);
+        emit log_named_uint("Setted up to", value); // logging only visible with forge test -vv
     }
 
     function test_Increment() public {
@@ -26,5 +26,10 @@ contract CounterTest is Test {
     function testFuzz_SetNumber(uint256 x) public {
         counter.setNumber(x);
         assertEq(counter.number(), x);
+    }
+
+    function test_getNumber() public {
+        counter.setNumber(200);
+        assertEq(counter.getNumber(),200);
     }
 }
