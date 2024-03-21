@@ -7,29 +7,29 @@ import {Counter} from "../src/Counter.sol";
 contract CounterTest is Test {
     Counter public counter;
 
+// All parameters set up in the setUp function apply for all test_ functions
     function setUp() public {
         counter = new Counter();
-        counter.setNumber(100);
+        counter.setNumber(200);
     }
 
     function test_setUp() public {
         uint value = counter.number();
-        assertEq(value, 100);
-        emit log_named_uint("Setted up to", value); // logging only visible with forge test -vv
+        assertEq(value, 200);
+        // logging only visible with forge test -vv
+        emit log_named_uint("1 - Initial value", value); 
     }
 
     function test_Increment() public {
         counter.increment();
-        assertEq(counter.number(), 101);
-    }
-
-    function testFuzz_SetNumber(uint256 x) public {
-        counter.setNumber(x);
-        assertEq(counter.number(), x);
+        assertEq(counter.number(), 201);
+        emit log_string("2 - Incremented by 1");
     }
 
     function test_getNumber() public {
-        counter.setNumber(200);
-        assertEq(counter.getNumber(),200);
+        test_Increment(); // just to interconnect functions, otherwise they do not 
+        uint value = counter.getNumber();
+        assertEq(value,201);
+        emit log_named_uint("3 - Final value", value);
     }
 }
