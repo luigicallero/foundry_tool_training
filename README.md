@@ -2,9 +2,10 @@
 
 ### Learning from Nader Dabit at [Smart Contract Development with Foundry](https://www.youtube.com/watch?v=uelA2U9TbgM&ab_channel=NaderDabit)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
+Nader Cheatsheet: 
+https://github.com/dabit3/foundry-cheatsheet
+#
+### Foundry consists of:
 
 -   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
