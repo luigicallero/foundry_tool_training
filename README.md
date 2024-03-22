@@ -36,13 +36,17 @@ $ forge init foundry_tool_training
 ### Build (no other parameters are required)
 
 ```shell
-$ forge build
+forge build
 ```
 
 ### Test
 
 ```shell
-$ forge test
+forge test
+```
+
+```shell
+forge test --match-path test/NFT.t.sol -vv --summary --detailed
 ```
 
 :bulb: Interesting stuff to test
@@ -73,9 +77,13 @@ vm.startPrank(bob);
 
 * Expect to revert
 > To be used before the action you expect to revert
+
 > Use the exact output of the error between ""
 ```shell
+erc721.mint(bob,0);
+vm.startPrank(mary);
 vm.expectRevert("not owner of token");
+erc721.burn(0);
 ```
 
 ### Format
