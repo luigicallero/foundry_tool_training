@@ -34,6 +34,18 @@ out: generated after test is executed (ABI)
 $ forge init foundry_tool_training
 ```
 
+### Adding packages
+Remember foundry is build with Rust. So do not attempt to install packages as with other frameworks using "npm instal xxxx", instead follow the packages instructions for Installation in Foundry.
+
+For Openzeppelin contracts use
+```shell
+forge install OpenZeppelin/openzeppelin-contracts
+```
+And add @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/ in remappings.txt.
+
+https://docs.openzeppelin.com/contracts/5.x/#foundry_git
+
+
 ### Build (no other parameters are required)
 
 ```shell
