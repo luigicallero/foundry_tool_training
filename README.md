@@ -99,6 +99,18 @@ vm.expectRevert("not owner of token");
 erc721.burn(0);
 ```
 
+### Test with different Timestamps:
+
+vm.warp = future time stamp
+skip = increment current time stamp => 
+rewind = decrement current timestamps => rewind(10)
+
+```shell        
+vm.warp(1759230001);
+skip(1000);
+rewind(10);
+```
+
 ### Format
 
 ```shell
