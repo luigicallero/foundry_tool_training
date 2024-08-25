@@ -169,6 +169,11 @@ cast send 0x5fbdb2315678afecb367f032d93f642f64180aa3 "setNumber(uint256)" 20 --p
 cast call 0x5fbdb2315678afecb367f032d93f642f64180aa3 "getNumber()(uint)"
 
 ```
+### Deploy in Polygon Testnet ( Polygon Avon)
+https://book.getfoundry.sh/forge/deploying
+```shell
+forge create --rpc-url <your_rpc_url> --private-key <your_private_key> src/MyContract.sol:MyContract
+```
 
 ### Help
 
