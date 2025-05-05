@@ -54,11 +54,46 @@ forge build
 
 ### Test
 
+Basic test command:
 ```shell
 forge test
 ```
 
+Test with verbosity levels (increasing detail):
 ```shell
+forge test -v      # Shows test names
+forge test -vv     # Shows test names and gas usage
+forge test -vvv    # Shows test names, gas usage, and traces
+forge test -vvvv   # Shows test names, gas usage, traces, and call data
+```
+
+Test specific functions or files:
+```shell
+# Test a specific function
+forge test --match-test test_getNumber -vv
+
+# Test functions matching a pattern
+forge test --match-test "test_*" -vv
+
+# Test a specific file
+forge test --match-path test/NFT.t.sol -vv
+
+# Test files matching a pattern
+forge test --match-path "test/*.t.sol" -vv
+```
+
+Test with additional options:
+```shell
+# Show gas report
+forge test --gas-report
+
+# Show test summary
+forge test --summary
+
+# Show detailed test output
+forge test --detailed
+
+# Combine options
 forge test --match-path test/NFT.t.sol -vv --summary --detailed
 ```
 
